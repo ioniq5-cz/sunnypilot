@@ -91,6 +91,9 @@ class SpeedLimitResolver():
   def _get_from_map_data(self):
     # Ignore if no live map data
     sock = 'liveMapData'
+    self._limit_solutions[SpeedLimitResolver.Source.map_data] = 0.
+    self._distance_solutions[SpeedLimitResolver.Source.map_data] = 0.
+    return
     if self._sm.logMonoTime[sock] is None:
       self._limit_solutions[SpeedLimitResolver.Source.map_data] = 0.
       self._distance_solutions[SpeedLimitResolver.Source.map_data] = 0.
